@@ -23,8 +23,7 @@ public class Calculator {
 	    return numbers.split(delim);
 	}
 	
-      
- 	private static int sum(String[] numbers) throws IllegalArgumentException {
+    private static int sum(String[] numbers) throws IllegalArgumentException {
 		int total_sum = 0;
 		String errorMsg = "";
 		for (String num : numbers) {
@@ -35,7 +34,8 @@ public class Calculator {
 				else {
 					errorMsg.concat("," + num);
 				}
-			}else {
+			}
+			if (toInt(num) < 1000) {
 				total_sum += toInt(num);
 			}
 		}
@@ -44,6 +44,4 @@ public class Calculator {
 		}
 		return total_sum;
 	}
-
-
 }

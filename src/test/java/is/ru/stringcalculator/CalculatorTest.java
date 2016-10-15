@@ -41,8 +41,8 @@ public class CalculatorTest {
 		assertEquals(12, Calculator.add("1,2\n9"));
 	}
 	
-	//checking for negative nubmers
 	@Rule
+	//checking for negative nubmers
     public ExpectedException expectedException = ExpectedException.none();
 	
 	@Test
@@ -58,5 +58,23 @@ public class CalculatorTest {
         expectedException.expectMessage("Negatives not allowed: -1");
         Calculator.add("-1,2,-9,-4");
     }
+	
+	@Test
+	//testing for numbers greater than 1000
+	public void testNumbersAboveThousand() {
+		assertEquals(37, Calculator.add("1001,37,0"));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
