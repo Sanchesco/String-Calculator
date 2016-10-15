@@ -56,7 +56,7 @@ public class CalculatorTest {
     public void testNegativeNumbers(){
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("Negatives not allowed: -1");
-        Calculator.add("1,2,-9,-4");
+        Calculator.add("-1,2,-9,-4");
     }
 	
 }
