@@ -24,14 +24,24 @@ public class Calculator {
 	}
 	
       
-    private static int sum(String[] numbers){
- 	    int total = 0;
-        for(String number : numbers){
-		    total += toInt(number);
+ 	private static int sum(String[] numbers) throws IllegalArgumentException {
+		int total_sum = 0;
+		String errorMsg = "";
+		for (String num : numbers) {
+			if (toInt(num) < 0) {
+				if (errorMsg == "") {
+					errorMsg = num;
+				}
+				else {
+					errorMsg.concat("," + num);
+				}
+			}
 		}
-		return total;
-    }
-
+		if (errorMsg != "") {
+			throw new IllegalArgumentException("Negatives not allowed: " + errorMsg);
+		}
+		return total_sum;
+	}
 
 
 }
