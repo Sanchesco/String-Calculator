@@ -65,7 +65,11 @@ public class CalculatorTest {
 		assertEquals(37, Calculator.add("1001,37,0"));
 	}
 	
-	
+	@Test
+	//testing for differente delimeters
+	public void testDifferentDelimeter2() {
+		assertEquals(3, Calculator.add("//&\n1&2"));
+	}
 	
 	
 	
