@@ -5,14 +5,9 @@ public class Calculator {
 	public static int add(String text){
 		if(text.equals("")){
 			return 0;
-		}
-		else if (text.contains("//")) {
-			String[] split = splitNumbers(text,"\n");
-			String delim = split[0].substring(2);
-			return sum(splitNumbers(split[1], delim));
-		}
-		else
+		}else{
 			return sum(splitNumbers(text, ",|\n"));
+		}
 	}
 
 	private static int toInt(String number){
